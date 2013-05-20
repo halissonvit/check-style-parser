@@ -1,10 +1,21 @@
 package br.inf.ufg.es.vv.checkstyle.parser.domain;
 
+@Entity
 public class Error {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id
+    
+   @Column
     private String line;
+    @Column
     private String column;
+    @Column
     private String severity;
+    @Column
     private String message;
+    @Column
     private String source;
 
     public String getSource() {
@@ -47,4 +58,3 @@ public class Error {
         this.line = line;
     }
 }
-

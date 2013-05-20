@@ -3,7 +3,13 @@ package br.inf.ufg.es.vv.checkstyle.parser.domain;
 import java.util.List;
 
 public class Relatorio {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column
     private String version;
+    @OneToMany(cascade = CascadeType.ALL) 
     private List<File> files;
 
     public String getVersion() {
