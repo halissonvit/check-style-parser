@@ -1,13 +1,15 @@
 package br.inf.ufg.es.vv.checkstyle.parser.domain;
 
+import javax.persistence.*;
+
 @Entity
 public class Error {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id
+    private Long id;
     
-   @Column
+    @Column
     private String line;
     @Column
     private String column;

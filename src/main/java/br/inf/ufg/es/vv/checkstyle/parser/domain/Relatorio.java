@@ -1,5 +1,6 @@
 package br.inf.ufg.es.vv.checkstyle.parser.domain;
 
+import javax.persistence.*;
 import java.util.List;
 
 public class Relatorio {
@@ -9,7 +10,7 @@ public class Relatorio {
     private Long id;
     @Column
     private String version;
-    @OneToMany(cascade = CascadeType.ALL) 
+    @OneToMany(cascade = CascadeType.ALL)
     private List<File> files;
 
     public String getVersion() {

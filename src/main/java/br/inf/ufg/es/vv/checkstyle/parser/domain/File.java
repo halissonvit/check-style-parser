@@ -22,7 +22,7 @@ public class File {
     private List<Error> errors;
 
     public Long getId() {
-        return name;
+        return id;
     }
 
     public String getName() {
