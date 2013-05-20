@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 
 import java.util.List;
 
+@Entity
 public class File {
 
     @Id

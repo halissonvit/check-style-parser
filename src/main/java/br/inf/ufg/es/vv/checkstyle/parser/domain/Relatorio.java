@@ -2,7 +2,7 @@ package br.inf.ufg.es.vv.checkstyle.parser.domain;
 
 import javax.persistence.*;
 import java.util.List;
-
+@Entity
 public class Relatorio {
 
     @Id
