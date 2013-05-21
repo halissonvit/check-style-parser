@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="checkstyle" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>checkstyle.model.Relatorio</class>
-		<class>checkstyle.model.Errors</class>
-		<class>checkstyle.model.Files</class>
+		<class>br.inf.ufg.es.vv.checkstyle.parser.domain.Relatorio</class>
+		<class>br.inf.ufg.es.vv.checkstyle.parser.domain.Error</class>
+		<class>br.inf.ufg.es.vv.checkstyle.parser.domain.File</class>
 		
 		
 		<properties>

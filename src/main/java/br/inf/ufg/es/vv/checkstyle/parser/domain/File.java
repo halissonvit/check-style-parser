@@ -1,5 +1,6 @@
 package br.inf.ufg.es.vv.checkstyle.parser.domain;
 
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class File {
+public class File implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +22,9 @@ public class File {
     private String name;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Error> errors;
+
+    public File() {
+    }
 
     public File(String name, List<Error> errors) {
         this.name = name;

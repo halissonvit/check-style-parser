@@ -1,9 +1,11 @@
 package br.inf.ufg.es.vv.checkstyle.parser.domain;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
+
 @Entity
-public class Relatorio {
+public class Relatorio implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,6 +15,11 @@ public class Relatorio {
     @OneToMany(cascade = CascadeType.ALL)
     private List<File> files;
 
+    
+     public Long getId() {
+        return id;
+    }
+     
     public String getVersion() {
         return version;
     }

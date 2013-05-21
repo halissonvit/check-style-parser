@@ -1,9 +1,10 @@
 package br.inf.ufg.es.vv.checkstyle.parser.domain;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-public class Error {
+public class Error implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,7 +13,7 @@ public class Error {
     @Column
     private String line;
     @Column
-    private String column;
+    private String coluna;
     @Column
     private String severity;
     @Column
@@ -20,14 +21,21 @@ public class Error {
     @Column
     private String source;
 
-    public Error(String line, String column, String severity, String message, String source) {
+    public Error() {
+    }
+
+    public Error(String line, String coluna, String severity, String message, String source) {
         this.line = line;
-        this.column = column;
+        this.coluna = coluna;
         this.severity = severity;
         this.message = message;
         this.source = source;
     }
 
+     public Long getId() {
+        return id;
+    }
+    
     public String getSource() {
         return source;
     }
@@ -52,12 +60,12 @@ public class Error {
         this.severity = severity;
     }
 
-    public String getColumn() {
-        return column;
+    public String getColuna() {
+        return coluna;
     }
 
-    public void setColumn(String column) {
-        this.column = column;
+    public void setColuna(String coluna) {
+        this.coluna = coluna;
     }
 
     public String getLine() {
