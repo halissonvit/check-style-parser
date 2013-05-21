@@ -20,7 +20,6 @@ public class CheckStyleParser {
             return null;
 
         Relatorio relatorio = new Relatorio();
-
         SAXBuilder builder = new SAXBuilder();
 
         try{
