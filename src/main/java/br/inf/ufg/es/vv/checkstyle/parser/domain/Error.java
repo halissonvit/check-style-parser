@@ -20,6 +20,14 @@ public class Error {
     @Column
     private String source;
 
+    public Error(String line, String column, String severity, String message, String source) {
+        this.line = line;
+        this.column = column;
+        this.severity = severity;
+        this.message = message;
+        this.source = source;
+    }
+
     public String getSource() {
         return source;
     }

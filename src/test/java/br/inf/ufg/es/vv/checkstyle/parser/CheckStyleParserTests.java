@@ -16,6 +16,18 @@ public class CheckStyleParserTests {
     }
 
     @Test
+    public void testObjetoRelatorioPreenchido(){
+        CheckStyleParser parser = new CheckStyleParser();
+        assertEquals("A lista de Files deveria conter 1 objeto",1,parser.parse(checkStyleResultValido).getFiles().size());
+    }
+
+    @Test
+    public void testQuantidadeDeErrorsDentroDeUmFile(){
+        CheckStyleParser parser = new CheckStyleParser();
+        assertEquals("Deveria haver 22 Errors dentro do primeiro File",22,parser.parse(checkStyleResultValido).getFiles().get(0).getErrors().size());
+    }
+
+    @Test
     public void testParseDeveRetornarNullSeReceberUmRelatorioInvalido() {
         CheckStyleParser parser = new CheckStyleParser();
         assertNull(parser.parse(new File("caminhoInvalido.xml")));

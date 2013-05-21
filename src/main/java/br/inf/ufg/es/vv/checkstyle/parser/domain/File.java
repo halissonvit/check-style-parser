@@ -21,6 +21,11 @@ public class File {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Error> errors;
 
+    public File(String name, List<Error> errors) {
+        this.name = name;
+        this.errors = errors;
+    }
+
     public Long getId() {
         return id;
     }
